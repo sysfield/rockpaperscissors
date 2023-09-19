@@ -4,5 +4,16 @@ function getComputerChoice()
     console.log(x[Math.round((Math.random()*10)%2)]);
 }
 
+function playRound(player, computer)
+{
+    
+}
+
+function game()
+{
+
+}
+
 const computerSelection = getComputerChoice();
-const playerSelection = (prompt("rock, paper, or scissors?"));
+const playerSelection = "rock";//prompt("rock, paper, or scissors?").toLowerCase();
+
