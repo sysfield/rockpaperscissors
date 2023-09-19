@@ -52,7 +52,7 @@ function game()
     for (let i = 0; i < 5; i++)
     {
         const computer = getComputerChoice();
-        const player = "rock";//prompt("rock, paper, or scissors?").toLowerCase();
+        const player = prompt("rock, paper, or scissors?").toLowerCase();
         x = playRound(player, computer);
         switch (x)
         {
