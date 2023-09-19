@@ -6,9 +6,21 @@ function getComputerChoice()
 
 function playRound(player, computer)
 {
+    x = 9;
+
     if (player == computer)
     {
-        return 2;
+        x = 2;
+    }
+
+    switch (x)
+    {
+        case 0:
+            return `You lose! ${computer} beats ${player}`;
+        case 1:
+            return `You win! ${player} beats ${computer}`
+        case 2:
+            return "Draw!"
     }
 }
 
