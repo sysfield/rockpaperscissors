@@ -41,15 +41,14 @@ function playRound(player, computer)
     return x;
 }
 
-function game(computer)
+function game()
 {   
-    var x = 0;
-    var round = ``;
-    var z = 0;
-    var y = 0;
-    var s = "s";
-    var name = "";
-    var winner = `The winner is ! The computer won ${z} round${s}, you won ${y}!`;
+    let x = 0;
+    let round = ``;
+    let z = 0;
+    let y = 0;
+    let s = "s";
+    let name = "";
     for (let i = 0; i < 5; i++)
     {
         const computer = getComputerChoice();
@@ -71,5 +70,23 @@ function game(computer)
         }
         console.log(round);
     }
+    if (z < 2 && z != 0)
+    {
+        s = "";
+    }
+    if (z > y)
+    {
+        name = "the computer";
+    }
+    else if (z < y)
+    {
+        name = "you";
+    }
+    else if (z == y)
+    {
+        name = "no one";
+    }
+    console.log(`The winner is ${name}! The computer won ${z} round${s}, you won ${y}!`);
 }
 
+game();
