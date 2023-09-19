@@ -12,6 +12,31 @@ function playRound(player, computer)
     {
         x = 2;
     }
+    
+    if (player == "rock" && computer == "paper")
+    {
+        x = 0;
+    }
+    else if (player == "rock" && computer == "scissors")
+    {
+        x = 1;
+    }
+    else if (player == "paper" && computer == "rock")
+    {
+        x = 1;
+    }
+    else if (player == "paper" && computer == "scissors")
+    {
+        x = 0;
+    }
+    else if (player == "scissors" && computer == "rock")
+    {
+        x = 0;
+    }
+    else if (player == "scissors" && computer == "paper")
+    {
+        x = 1;
+    }
 
     switch (x)
     {
