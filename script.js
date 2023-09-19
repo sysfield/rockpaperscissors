@@ -6,7 +6,7 @@ function getComputerChoice()
 
 function playRound(player, computer)
 {
-    x = 9;
+    var x = 0;
 
     if (player == computer)
     {
@@ -38,20 +38,24 @@ function playRound(player, computer)
         x = 1;
     }
 
-    switch (x)
-    {
-        case 0:
-            return `You lose! ${computer} beats ${player}`;
-        case 1:
-            return `You win! ${player} beats ${computer}`
-        case 2:
-            return "Draw!"
-    }
+    return x;
 }
 
 function game()
-{
-
+{   
+    var x = 0
+    for (let i = 0; i < 5; i++)
+    {
+        switch (x)
+        {
+            case 0:
+                return `You lose! ${computer} beats ${player}`;
+            case 1:
+                return `You win! ${player} beats ${computer}`
+            case 2:
+                return "Draw!"
+        }
+    }
 }
 
 const computerSelection = getComputerChoice();
