@@ -48,6 +48,7 @@ function game(computer)
     var z = 0;
     var y = 0;
     var s = "s";
+    var name = "";
     var winner = `The winner is ! The computer won ${z} round${s}, you won ${y}!`;
     for (let i = 0; i < 5; i++)
     {
@@ -58,9 +59,11 @@ function game(computer)
         {
             case 0:
                 round = `You lose! ${computer} beats ${player}`;
+                z++;
                 break;
             case 1:
                 round = `You win! ${player} beats ${computer}`;
+                y++;
                 break;
             case 2:
                 round = "Draw!";
