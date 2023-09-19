@@ -41,25 +41,32 @@ function playRound(player, computer)
     return x;
 }
 
-function game()
+function game(computer)
 {   
-    var x = 0
+    var x = 0;
+    var round = ``;
+    var z = 0;
+    var y = 0;
+    var s = "s";
+    var winner = `The winner is ! The computer won ${z} round${s}, you won ${y}!`;
     for (let i = 0; i < 5; i++)
     {
+        const computer = getComputerChoice();
+        const player = "rock";//prompt("rock, paper, or scissors?").toLowerCase();
+        x = playRound(player, computer);
         switch (x)
         {
             case 0:
-                return `You lose! ${computer} beats ${player}`;
+                round = `You lose! ${computer} beats ${player}`;
+                break;
             case 1:
-                return `You win! ${player} beats ${computer}`
+                round = `You win! ${player} beats ${computer}`;
+                break;
             case 2:
-                return "Draw!"
+                round = "Draw!";
+                break;
         }
+        console.log(round);
     }
 }
-
-const computerSelection = getComputerChoice();
-const playerSelection = "rock";//prompt("rock, paper, or scissors?").toLowerCase();
-
-console.log(playRound(playerSelection, computerSelection));
 
