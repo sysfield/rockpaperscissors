@@ -5,4 +5,4 @@ function getComputerChoice()
 }
 
 const computerSelection = getComputerChoice();
-const playerSelection = (prompt("hello"));
+const playerSelection = (prompt("rock, paper, or scissors?"));
