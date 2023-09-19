@@ -4,4 +4,5 @@ function getComputerChoice()
     console.log(x[Math.round((Math.random()*10)%2)]);
 }
 
-getComputerChoice();
+const computerSelection = getComputerChoice();
+const playerSelection = (prompt("hello"));
