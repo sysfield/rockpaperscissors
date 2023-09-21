@@ -49,27 +49,25 @@ function game()
     let y = 0;
     let s = "s";
     let name = "";
-    for (let i = 0; i < 5; i++)
+    const computer = getComputerChoice();
+    const player = prompt("rock, paper, or scissors?").toLowerCase();
+    x = playRound(player, computer);
+    switch (x)
     {
-        const computer = getComputerChoice();
-        const player = prompt("rock, paper, or scissors?").toLowerCase();
-        x = playRound(player, computer);
-        switch (x)
-        {
-            case 0:
-                round = `You lose! ${computer} beats ${player}`;
-                z++;
-                break;
-            case 1:
-                round = `You win! ${player} beats ${computer}`;
-                y++;
-                break;
-            case 2:
-                round = "Draw!";
-                break;
-        }
-        console.log(round);
+        case 0:
+            round = `You lose! ${computer} beats ${player}`;
+            z++;
+            break;
+        case 1:
+            round = `You win! ${player} beats ${computer}`;
+            y++;
+            break;
+        case 2:
+            round = "Draw!";
+            break;
     }
+    console.log(round);
+    
     if (z < 2 && z != 0)
     {
         s = "";
