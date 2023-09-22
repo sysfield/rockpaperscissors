@@ -1,5 +1,5 @@
-var z = 0;
-var y = 0;
+var computerTally = 0;
+var playerTally = 0;
 var divScore = document.getElementById('score');
 var divWin = document.getElementById('win');
 
@@ -56,52 +56,49 @@ btns.forEach((btn) => {
 
 function game(player)
 {   
-    let x = 0;
-    let round = ``;
+    let tally = 0;
     let s = "s";
     let name = "";
     const computer = getComputerChoice();
     
-    x = playRound(player, computer);
-    if ((z < 5 && y < 5))
+    tally = playRound(player, computer);
+    if ((computerTally < 5 && playerTally < 5))
     {
-        switch (x)
+        switch (tally)
         {
             case 0:
-                round = `You lose! ${computer} beats ${player}`;
-                z++;
+                computerTally++;
                 break;
             case 1:
-                round = `You win! ${player} beats ${computer}`;
-                y++;
+                playerTally++;
                 break;
             case 2:
-                round = "Draw!";
                 break;
         }
-        divScore.textContent = `your score: ${y}, computer score: ${z}`;
+        divScore.textContent = `your score: ${playerTally}, computer score: ${computerTally}`;
+        // console.log(computerTally, playerTally);
         divWin.textContent = ``;
     }
     else
     {
-        if (z < 2 && z != 0)
+        if (computerTally < 2 && computerTally != 0)
         {
             s = "";
         }
-        if (z > y)
+        if (computerTally > playerTally)
         {
             name = "the computer";
         }
-        else if (z < y)
+        else if (computerTally < playerTally)
         {
             name = "you";
         }
-        else if (z == y)
+        else if (computerTally == playerTally)
         {
             name = "no one";
         }
-        divWin.textContent = `The winner is ${name}! The computer won ${z} round${s}, you won ${y}!`;
-        z = 0;
-        y = 0;
+        divWin.textContent = `The winner is ${name}! The computer won ${computerTally} round${s}, you won ${playerTally}!`;
+        computerTally = 0;
+        playerTally = 0;
     }
 }
