@@ -74,39 +74,39 @@ function fnTally(player)
                 break;
         }
         divScore.textContent = `your score: ${playerTally}, computer score: ${computerTally}`;
-        // console.log(computerTally, playerTally);
         divWin.textContent = ``;
+        if (computerTally === 5 || playerTally === 5)
+        {
+            win()
+        }
     }
     else
     {
-        win(computerTally, playerTally);
+        win();
     }
 }
 
-function win(computerTally, playerTally)
+function win()
 {
     let s = "s";
     let name = "";
-    // else
-    // {
-        if (computerTally < 2 && computerTally != 0)
-        {
-            s = "";
-        }
-        if (computerTally > playerTally)
-        {
-            name = "the computer";
-        }
-        else if (computerTally < playerTally)
-        {
-            name = "you";
-        }
-        else if (computerTally == playerTally)
-        {
-            name = "no one";
-        }
-        divWin.textContent = `The winner is ${name}! The computer won ${computerTally} round${s}, you won ${playerTally}!`;
-        computerTally = 0;
-        playerTally = 0;
-    // }
+    if (computerTally < 2 && computerTally != 0)
+    {
+        s = "";
+    }
+    if (computerTally > playerTally)
+    {
+        name = "the computer";
+    }
+    else if (computerTally < playerTally)
+    {
+        name = "you";
+    }
+    else if (computerTally == playerTally)
+    {
+        name = "no one";
+    }
+    divWin.textContent = `The winner is ${name}! The computer won ${computerTally} round${s}, you won ${playerTally}!`;
+    computerTally = 0;
+    playerTally = 0;
 }
