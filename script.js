@@ -80,7 +80,7 @@ function game(player)
                 break;
         }
         divScore.textContent = `your score: ${y}, computer score: ${z}`;
-        divWin = ``;
+        divWin.textContent = ``;
     }
     else
     {
