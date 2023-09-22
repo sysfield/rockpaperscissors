@@ -1,3 +1,6 @@
+var z = 0;
+var y = 0;
+
 function getComputerChoice()
 {
     var x = ["rock", "paper", "scissors"];
@@ -53,47 +56,48 @@ function game(player)
 {   
     let x = 0;
     let round = ``;
-    let z = 0;
-    let y = 0;
     let s = "s";
     let name = "";
     const computer = getComputerChoice();
     
-    // const player = 'rock';
     x = playRound(player, computer);
-    switch (x)
+    if ((z < 5 && y < 5))
     {
-        case 0:
-            round = `You lose! ${computer} beats ${player}`;
-            z++;
-            break;
-        case 1:
-            round = `You win! ${player} beats ${computer}`;
-            y++;
-            break;
-        case 2:
-            round = "Draw!";
-            break;
+        switch (x)
+        {
+            case 0:
+                round = `You lose! ${computer} beats ${player}`;
+                z++;
+                break;
+            case 1:
+                round = `You win! ${player} beats ${computer}`;
+                y++;
+                break;
+            case 2:
+                round = "Draw!";
+                break;
+        }
     }
-    console.log(round);
-
-    if (z < 2 && z != 0)
+    else
     {
-        s = "";
+        if (z < 2 && z != 0)
+        {
+            s = "";
+        }
+        if (z > y)
+        {
+            name = "the computer";
+        }
+        else if (z < y)
+        {
+            name = "you";
+        }
+        else if (z == y)
+        {
+            name = "no one";
+        }
+        console.log(`The winner is ${name}! The computer won ${z} round${s}, you won ${y}!`);
+        z = 0;
+        y = 0;
     }
-    if (z > y)
-    {
-        name = "the computer";
-    }
-    else if (z < y)
-    {
-        name = "you";
-    }
-    else if (z == y)
-    {
-        name = "no one";
-    }
-    console.log(`The winner is ${name}! The computer won ${z} round${s}, you won ${y}!`);
 }
-
-// game();
