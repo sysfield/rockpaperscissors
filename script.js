@@ -41,7 +41,15 @@ function playRound(player, computer)
     return x;
 }
 
-function game()
+const btns = document.querySelectorAll('button');
+btns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        const player = btn.innerHTML;
+        game(player);
+    });
+});
+
+function game(player)
 {   
     let x = 0;
     let round = ``;
@@ -50,7 +58,8 @@ function game()
     let s = "s";
     let name = "";
     const computer = getComputerChoice();
-    const player = prompt("rock, paper, or scissors?").toLowerCase();
+    
+    // const player = 'rock';
     x = playRound(player, computer);
     switch (x)
     {
@@ -67,7 +76,7 @@ function game()
             break;
     }
     console.log(round);
-    
+
     if (z < 2 && z != 0)
     {
         s = "";
@@ -87,4 +96,4 @@ function game()
     console.log(`The winner is ${name}! The computer won ${z} round${s}, you won ${y}!`);
 }
 
-game();
+// game();
