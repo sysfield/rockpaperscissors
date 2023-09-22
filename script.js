@@ -50,16 +50,14 @@ const btns = document.querySelectorAll('button');
 btns.forEach((btn) => {
     btn.addEventListener('click', () => {
         const player = btn.innerHTML;
-        game(player);
+        fnTally(player);
     });
 });
 
-function game(player)
+function fnTally(player)
 {   
     let tally = 0;
-    let s = "s";
-    let name = "";
-    const computer = getComputerChoice();
+    let computer = getComputerChoice();
     
     tally = playRound(player, computer);
     if ((computerTally < 5 && playerTally < 5))
@@ -81,6 +79,16 @@ function game(player)
     }
     else
     {
+        win(computerTally, playerTally);
+    }
+}
+
+function win(computerTally, playerTally)
+{
+    let s = "s";
+    let name = "";
+    // else
+    // {
         if (computerTally < 2 && computerTally != 0)
         {
             s = "";
@@ -100,5 +108,5 @@ function game(player)
         divWin.textContent = `The winner is ${name}! The computer won ${computerTally} round${s}, you won ${playerTally}!`;
         computerTally = 0;
         playerTally = 0;
-    }
+    // }
 }
