@@ -1,5 +1,7 @@
 var z = 0;
 var y = 0;
+var divScore = document.getElementById('score');
+var divWin = document.getElementById('win');
 
 function getComputerChoice()
 {
@@ -77,6 +79,8 @@ function game(player)
                 round = "Draw!";
                 break;
         }
+        divScore.textContent = `your score: ${y}, computer score: ${z}`;
+        divWin = ``;
     }
     else
     {
@@ -96,7 +100,7 @@ function game(player)
         {
             name = "no one";
         }
-        console.log(`The winner is ${name}! The computer won ${z} round${s}, you won ${y}!`);
+        divWin.textContent = `The winner is ${name}! The computer won ${z} round${s}, you won ${y}!`;
         z = 0;
         y = 0;
     }
